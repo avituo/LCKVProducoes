@@ -1,0 +1,7 @@
+{
+  "name": "LCKVApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
