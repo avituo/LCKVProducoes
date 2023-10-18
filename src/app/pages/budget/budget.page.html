@@ -1,11 +1,43 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Orçamento</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <div class="flex-center">
+      <img src="assets/logos/logo.png" width="65px">
+    </div>
+    <ion-title></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
+  <ion-list>
+    <ion-item>
+      <ion-input label="Email *" labelPlacement="stacked" type="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Número de telefone *" labelPlacement="stacked" type="tel"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Seu nome (real e artístico) *" labelPlacement="stacked" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Idade *" labelPlacement="stacked" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-select label="Onde nos encontrou? *" placeholder="Selecione...">
+        <ion-select-option value="redesSociais">Redes sociais</ion-select-option>
+        <ion-select-option value="indicacao">Indicação</ion-select-option>
+        <ion-select-option value="pessoalmente">Pessoalmente</ion-select-option>
+        <ion-select-option value="cartaoVisitas">Cartão de visitas</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+
   <ion-button id="open-toast" expand="block">Finalizar</ion-button>
+  <ion-button slot="fixed"><ion-icon name="arrow-up-outline"></ion-icon></ion-button>
   <p id="message"></p>
-  <ion-toast trigger="open-toast" message="Proposta de orçamento enviada, aguarde retorno." [duration]="5000" icon="checkmark"></ion-toast>
+  <ion-toast trigger="open-toast" message="Proposta de orçamento enviada, aguarde retorno." [duration]="5000"
+    icon="checkmark"></ion-toast>
 </ion-content>

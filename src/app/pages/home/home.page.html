@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button color="medium"></ion-menu-button>
     </ion-buttons>
     <div class="flex-center">
       <img src="assets/logos/logo.png" width="65px">
@@ -11,20 +11,6 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div>
-    <h1>LCKV Produções</h1>
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>SOBRE MIM</ion-card-title>
-        <ion-card-subtitle>Lucas Carvalho</ion-card-subtitle>
-      </ion-card-header>
-    
-      <ion-card-content>
-        Nascido e criado no Goiânia Viva, bairro periférico de Goiânia, sou um FilmMaker desde 2019, quando 
-        minha paixão pela produção audiovisual começou.
-      </ion-card-content>
-    </ion-card>
-  </div>
   <swiper-container [loop]="true" [pagination]="true">
     <swiper-slide *ngFor="let image of images">
       <img [src]="image" />
