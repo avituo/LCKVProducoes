@@ -1,0 +1,17 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Display</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list-header>Aparência</ion-list-header>
+  <ion-list [inset]="true">
+    <ion-item>
+      <ion-toggle mode="ios" [checked]="darkMode" (ionChange)="toggleDarkMode()">Modo Escuro</ion-toggle>
+    </ion-item>
+  </ion-list>
+</ion-content>
