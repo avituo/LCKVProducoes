@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Geolocation } from '@capacitor/geolocation';
 
 @Component({
   selector: 'app-configurations',
@@ -31,6 +32,32 @@ export class ConfigurationsPage implements OnInit {
       localStorage.setItem('darkModeActivated', 'true');
     } else {
       localStorage.setItem('darkModeActivated', 'false');
+    }
+  }
+
+  async getCurrentLocation() {
+    try {
+      const permissionStatus = await Geolocation.checkPermissions();
+      console.log('Permission status: ', permissionStatus.location);
+      if (permissionStatus?.location != 'granted') {
+        const requestStatus = await Geolocation.requestPermissions();
+        if (requestStatus.location != 'granted') {
+          return;
+        }
+      }
+
+      let options: PositionOptions = {
+        maximumAge: 3000,
+        timeout: 10000,
+        enableHighAccuracy: false
+      };
+
+      const position = await Geolocation.getCurrentPosition(options);
+      console.log(position);
+
+    } catch (e) {
+      console.log(e);
+      throw(e);
     }
   }
 
