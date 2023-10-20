@@ -1,9 +1,9 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button default-href="home"></ion-back-button>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Display</ion-title>
+    <ion-title>Configurações</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -20,5 +20,20 @@
       <ion-toggle mode="ios" [checked]="" (ionChange)="getCurrentLocation()">Ativar Localização</ion-toggle>
     </ion-item>
   </ion-list>
+  <ion-list-header>Conta</ion-list-header>
+  <ion-list [inset]="true">
+    <ion-item>
+      <ion-toggle mode="ios" [checked]="accountStatus" (ionChange)="changeAccountStatus()">Conta Ativa</ion-toggle>
+    </ion-item>
+  </ion-list>
+  <ion-list [inset]="true">
+    <ion-item>
+      <ion-checkbox [checked]="username" labelPlacement="start" (ionChange)="changeUserName()">Mudar usuário para "usuário teste"</ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox [checked]="userEmail" labelPlacement="start" (ionChange)="changeUserEmail()">Mudar e-mail para "Email@teste"</ion-checkbox>
+    </ion-item>
+  </ion-list>
+
   <ion-button expand="block" (click)="saveAll()">Salvar</ion-button>
 </ion-content>
