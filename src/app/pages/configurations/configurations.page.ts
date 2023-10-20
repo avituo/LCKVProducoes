@@ -27,12 +27,6 @@ export class ConfigurationsPage implements OnInit {
   toggleDarkMode() {
     this.darkMode = !this.darkMode;
     document.body.classList.toggle('dark', this.darkMode);
-
-    if (this.darkMode) {
-      localStorage.setItem('darkModeActivated', 'true');
-    } else {
-      localStorage.setItem('darkModeActivated', 'false');
-    }
   }
 
   async getCurrentLocation() {
@@ -46,7 +40,7 @@ export class ConfigurationsPage implements OnInit {
         }
       }
 
-      let options: PositionOptions = {
+      const options: PositionOptions = {
         maximumAge: 3000,
         timeout: 10000,
         enableHighAccuracy: false
@@ -59,6 +53,15 @@ export class ConfigurationsPage implements OnInit {
       console.log(e);
       throw(e);
     }
+  }
+
+  saveAll() {
+    if (this.darkMode) {
+      localStorage.setItem('darkModeActivated', 'true');
+    } else {
+      localStorage.setItem('darkModeActivated', 'false');
+    }
+
   }
 
 }

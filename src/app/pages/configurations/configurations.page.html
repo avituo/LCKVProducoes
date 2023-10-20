@@ -14,9 +14,11 @@
       <ion-toggle mode="ios" [checked]="darkMode" (ionChange)="toggleDarkMode()">Modo Escuro</ion-toggle>
     </ion-item>
   </ion-list>
+  <ion-list-header>Permissões</ion-list-header>
   <ion-list [inset]="true">
     <ion-item>
-      <ion-toggle mode="ios" [checked]="darkMode" (ionChange)="getCurrentLocation()">Ativar Localização</ion-toggle>
+      <ion-toggle mode="ios" [checked]="" (ionChange)="getCurrentLocation()">Ativar Localização</ion-toggle>
     </ion-item>
   </ion-list>
+  <ion-button expand="block" (click)="saveAll()">Salvar</ion-button>
 </ion-content>
